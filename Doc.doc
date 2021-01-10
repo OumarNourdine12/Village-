@@ -1,0 +1,44 @@
+killall -9 node
+env= SKIP_PREFLIGHT_CHECK=true
+npm i emailjs-com --save pour le email
+npm install react-google-maps
+npm install react-google-login
+npm install node-sass
+
+npm i axios
+npx create-react-app client
+
+npm run start:watch
+
+npx sequelize init
+npw sequelize --help
+npx sequelize db:seed:all
+npx sequelize db:migrate
+npx sequelize-cli db:migrate:undo:all
+npx sequelize-cli db:migrate --debug
+
+npx sequelize db:drop
+npx sequelize db:create
+
+
+
+
+
+en premier apres de la config minimal npx sequelize init pour la config de la BDD
+après npx sequelize db:create pour crée la BDD
+
+ensuite créer le model 
+
+npx sequelize-cli model:generate --name admin --attributes email:string,password:string
+
+npx sequelize-cli model:generate --name user --attributes prenom:string,nom:string,email:string,password:string,adresse:string,code_postal:string,ville:string,pays:string
+
+npx sequelize-cli model:generate --name don --attributes nom:string,prenom:string,montant:string,date_don:date,user_affilier:string
+
+npx sequelize-cli model:generate --name annonce --attributes nom_action:string,lieu:string,date_debut:date,date_fin:date
+
+
+après sde ma config de les model on lance la migration
+npx sequelize db:migrate
+
+après on commence a créer des routes et controlleurs
