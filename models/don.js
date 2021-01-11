@@ -8,15 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.User, { as: "user" });
     }
   };
-  Don.init({
-    nom: DataTypes.STRING,
-    prenom: DataTypes.STRING,
+  Don.init({    
+    titre: DataTypes.STRING,
     montant: DataTypes.STRING,
-    date_don: DataTypes.DATE,
-    user_affilier: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Don',
-  });
+    date_don: DataTypes.DATE
+
+  },
+    {
+      sequelize,
+      modelName: 'Don',
+    });
   return Don;
 };

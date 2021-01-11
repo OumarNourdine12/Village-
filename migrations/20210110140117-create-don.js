@@ -17,10 +17,7 @@ module.exports = {
           key: "id",
         }
       },
-      nom: {
-        type: Sequelize.STRING
-      },
-      prenom: {
+      titre: {
         type: Sequelize.STRING
       },
       montant: {
@@ -28,9 +25,6 @@ module.exports = {
       },
       date_don: {
         type: Sequelize.DATE
-      },
-      user_affilier: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
