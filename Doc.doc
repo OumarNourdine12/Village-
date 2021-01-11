@@ -41,4 +41,6 @@ npx sequelize-cli model:generate --name annonce --attributes nom_action:string,l
 après sde ma config de les model on lance la migration
 npx sequelize db:migrate
 
-après on commence a créer des routes et controlleurs
+apres la migration il faut lancer les seeds: npx sequelize db:seed:all
+
+
