@@ -21,6 +21,7 @@
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "create-react-app": "^4.0.1",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "helmet": "^4.1.0",
@@ -29,9 +30,9 @@
     "mysql2": "^2.1.0",
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
+    "s": "^1.0.0",
     "sass": "^1.26.11",
     "sequelize": "^6.2.3",
-    "s": "^1.0.0",
     "vue-validator": "^3.0.0-alpha.2"
   },
   "devDependencies": {

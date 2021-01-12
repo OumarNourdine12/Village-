@@ -15,7 +15,7 @@ module.exports = () => {
         {
             prenom: 'Ronaldo',
             nom: 'Luiz',
-            email: 'ronaldo@gmail?com',
+            email: 'ronaldo@gmail.com',
             password: '$2b$10$tUsy0cZXW0cWUc0ikFxJceWEDhhGujk63UngESUU6wdbqTb7WH1/i',
             adresse: '56 rue Sadi Carnot',
             code_postal: '93170',

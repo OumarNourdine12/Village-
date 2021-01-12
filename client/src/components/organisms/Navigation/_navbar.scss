@@ -1,0 +1,95 @@
+@import '../../../sass/config/mixins';
+
+.navigation {
+  background-color: #ededed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 92%;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.5);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box;
+
+  .logo-a{
+    display: none;
+    @include media(desktop) {
+      display: flex;
+      margin: 0 5% 0 -12% ;
+      width: 13%;
+    }
+  }
+  .logo-b{
+    display: none;
+    @include media(desktop) {
+      display: flex;
+      margin: 0 5% 0 -5% ;
+      width: 5%;
+    }
+  }
+
+    .logo-nav {
+      width: 8vw;
+      @include media(tablet) {
+        width: 6vw;
+      }
+      @include media(desktop) {
+        display: none;
+      }
+    }
+
+    @include media(tablet) {
+      top: 0%;
+    }
+
+  h3 {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgb(102, 101, 101);
+    @include media(desktop) {
+      font-size: 1rem;
+      color: blanchedalmond;
+    }
+
+  }
+  &__button {
+    margin: 0 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+      @include media(desktop) {
+        width: 10%;
+        height: 40px;
+        background-color:  #007400;
+        border: none;
+        border-radius: 5px;
+        margin: 1.5% 5% 1.5% 0%;
+      }
+      :hover {
+        @include media(desktop) {
+          :hover {
+            margin-top: -4%;
+            padding-top: 10px;
+            background-color:  #003900;
+
+          }
+        }
+        border: none;
+        border-radius: 5px;
+        margin-top: -3%;
+        height: 120%;
+        text-decoration: none;
+        transition: all 0.4s; 
+        cursor: pointer;
+        h3{
+          color: black;
+        }
+      }
+      :focus {
+        outline: none !important;
+      }
+   }
+
+}

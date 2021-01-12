@@ -1,0 +1,144 @@
+@import '../../../sass/config/mixins';
+
+#cont{
+  @include media(desktop) {
+    margin-left: -25%;
+    width: 98vw;
+    height: 80vh;
+    
+  }
+
+}
+        .conteneur {
+          border: none;
+          background-color: #ededed;
+          width: 100%;
+          height: 85vh;
+          .jumbo{
+           border: none;
+            background:  #ededed;
+           padding: 2.5%;
+            @include media(desktop) {
+              width: 40vw;
+              height: 70vh;
+              margin: -1% 0 0% 0;
+            }
+            h2{
+              font-size: 1.5rem;
+              color: black;
+            }
+          }
+          .jumbo-2{
+            border: none;
+             
+             padding: 2.5%;
+             @include media(desktop) {
+               width: 40vw;
+               height: 70vh;
+               display:block;
+               margin-left: 55%;
+               margin-top: -40%;
+                         
+             }
+             h2{
+               font-size: 1.5rem;
+               color: white;
+             }
+             .table-aniprofil {
+              background-color: #ededed;
+               align-items: center;
+               margin: 5% 10% 1% 10%;
+               padding: 1% 5% 1% 5%;
+             }
+           }
+          .table {
+            padding: 5%;
+            margin-top: 5%;
+            @include media(desktop) {
+              width: 35vw;
+              height: 45vh;
+              background-color: #ededed;
+              margin-bottom: -2%;
+            }
+            
+            h6{
+              font-size: 1.2rem;
+            }
+            .photo-perfil{
+              width: 20vw;
+              height: 15vh;
+            
+             margin: -30% 0 10% 80%;  
+             img{
+              width: 20vw;
+              height: 15vh;
+             }        
+            }
+              form{
+                text-align: right;
+                label{
+                  margin: 0;              
+                }
+                input{
+                  margin: 0;
+                }
+                button{
+                 margin: 0;
+                }
+           
+              }
+            }
+            .button3 {
+              width: 50%;
+              margin: 0 0 5% 25%;
+              background-color:  #007400;;
+              height: 40px;
+              font-size: 18px;
+              border: none;
+              border-radius: 5px;
+              color: rgb(255, 255, 255);
+              margin-top: 5%;
+            }
+            .button3:hover {
+              background-color: #003900;
+              cursor: pointer;
+            }
+            .button3:focus {
+              outline: none !important;
+            }
+
+            .button-a {
+              width: 10vh;
+              height: 42px;
+              font-size: 14px;
+              background-color:  #1e90ff;
+              border: none;
+              border-radius: 5px;
+              color: rgb(255, 255, 255);
+              border-style: none;           
+            }
+            .button-a:hover {
+              background-color: #00509e;;
+              cursor: pointer;
+            }
+            .button-a:focus {
+              outline: none !important;
+            }
+
+            @include media(desktop) {
+              width: 40vw;
+              height: 100vh;
+              margin-bottom: 5%;
+              .table {
+                .photo-perfil{
+                  width: 8vw;
+                  height: 15vh;
+                 margin: -16% 0 10% 68%;  
+                 img{
+                  width: 8vw;
+                  height: 20vh;
+                 }        
+                }
+              }
+            }
+          }

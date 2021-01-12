@@ -6,9 +6,10 @@ const models = require('../models')
 const jwttoken = require('../middlewares/jwt');
 const { OK } = require('../helpers/status_codes');
 const { BadRequestError, UnauthorizedError, ForbiddenError } = require('../helpers/errors');
-
+const { Don }= models;
 
 users.use(cors())
+
 
 process.env.SECRET_KEY = 'secret'
 
@@ -129,13 +130,13 @@ module.exports = {
             where: {
                 id: user.id
             },
-            /* include: [
-                 {
-                     model: Don,
-                     as: "Dons",
-                     attributes: ["nom", "prenom", "montant", "date_don", "user_affilier"],
-                 },
-             ],*/
+            include: [
+                {
+                    model: Don,
+                    as: "Dons",
+                    attributes: ["titre", "montant", "date_don"],
+                },
+            ],
         })
             .then(user => {
                 if (user) {
