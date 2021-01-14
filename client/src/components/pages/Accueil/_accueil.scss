@@ -4,17 +4,18 @@
     display: flex;
     justify-content: center;
     height: 80%;
-    .div-center{
-      margin: -5% 0 0 -1%; 
+    .div-center{   
+      margin: 1% 0 0 -1%; 
 
       .logo{
-        width: 50%;
+        width: 45%;
         display:block;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: -10%;
         @include media(tablet) {
-          margin-top: 15%;
-          width: 35vw;
+          margin-top: 12%;
+          width: 18vw;
          }
         @include media(desktop) {
           display: none;
@@ -24,11 +25,25 @@
       .titre{
         text-align: center;
         color: #006800;
+        font-size: 20px;
+        @include media(tablet) {
+          margin-top: 1%;
+         }
         @include media(desktop) {
           margin-top: 5%;
-        }
+        }      
        }
-
+       .titreB{
+        text-align: center;
+        color: #006800;
+        font-size: 20px;
+        @include media(tablet) {
+          margin-top: 1%;
+         }
+        @include media(desktop) {
+          margin-bottom: 1%;
+        }      
+       }
       .text{
         text-align: center;
         margin-bottom: 0;
@@ -36,7 +51,7 @@
           display: none;
         }
        }
-
+       
       .image{
         width: 450px;
         height: 40vh;
@@ -44,7 +59,7 @@
         margin-left: auto;
         margin-right: auto;
         @include media(tablet) {
-          width: 80vw;
+          width: 55vw;
           height: 35vh;
          }
          @include media(desktop) {
@@ -57,10 +72,15 @@
           display: flex;
           margin-left: auto;
           margin-right: auto;
-          width: 75vw;
-          height: 65vh;
-
+          width: 65vw;
+          height: 60vh;
+         
         }
+      }
+      .annoncesTous{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
       }
  
     } 

@@ -5,7 +5,7 @@ module.exports = () => {
             userId: 1,
             titre: 'Don ferme',
             montant: '3500',
-            date_don: "2021-05-2022",
+            date_don: "2021-05-22",
             createdAt: new Date(),
             updatedAt: new Date(),
         },
@@ -24,7 +24,7 @@ module.exports = () => {
             userId: 3,
             titre: 'A compagnement scolaire',
             montant: '8500',
-            date_don: "2021-07-2022",
+            date_don: "2021-07-20",
             createdAt: new Date(),
             updatedAt: new Date(),
         }

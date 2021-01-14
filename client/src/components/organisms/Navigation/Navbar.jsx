@@ -9,11 +9,10 @@ class Navbar extends Component {
     localStorage.removeItem('token')
     this.props.history.push(`/`)
   }
-// avant de se coonecter
+
   render() {
     const loginRegLink = (
       <nav className="navigation">
-
         <img className="logo-a" src="./img/logoVIA.jpg" alt="logo" />
         <div className="navigation__button media_smartphone">
           <Link to="/">
@@ -41,8 +40,6 @@ class Navbar extends Component {
         </div>
       </nav>
     )
-
-    // apres connexion
 
     const userLink = (
       <nav className="navigation">
@@ -92,3 +89,5 @@ class Navbar extends Component {
 }
 
 export default withRouter(Navbar)
+
+

@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 92%;
+  top: 90%;
   border-bottom: 10px solid rgba(255, 255, 255, 0.5);
   -webkit-background-clip: padding-box; /* for Safari */
   background-clip: padding-box;
@@ -17,7 +17,7 @@
     @include media(desktop) {
       display: flex;
       margin: 0 5% 0 -12% ;
-      width: 13%;
+      width: 5%;
     }
   }
   .logo-b{

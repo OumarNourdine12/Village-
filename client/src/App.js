@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Footer from './components/organisms/Footer/Footer';
+import React, { Component } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import Routes from './components/Routes';
+import Header from './components/organisms/Header/Header';
+import Footer from './components/organisms/Footer/Footer';
+
 
 class App extends Component {
   render() {
@@ -10,7 +12,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Routes />
-          <Footer/>
+          <Header />
+          <Footer />
         </div>
       </Router>
     )
@@ -18,3 +21,4 @@ class App extends Component {
 }
 
 export default App
+

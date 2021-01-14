@@ -7,10 +7,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       //this.belongsTo(models.Admin, { as: "admin" });
       this.hasMany(
-        models.Don, {
+        models.Annonce, {
         foreignKey: "userId",
-      },
-        models.Action, {
+      }
+      );
+      this.hasMany(
+        models.Don, {
         foreignKey: "userId",
       }
       );

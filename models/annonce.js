@@ -8,14 +8,16 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.User, { as: "user" });
     }
   };
-  Annonce.init({
-    nom_action: DataTypes.STRING,
-    lieu: DataTypes.STRING,
-    date_debut: DataTypes.DATE,
-    date_fin: DataTypes.DATE
-  }, {
+  Annonce.init(
+    {
+      nom_action: DataTypes.STRING,
+      lieu: DataTypes.STRING,
+      date_debut: DataTypes.DATE,
+      date_fin: DataTypes.DATE
+    }, {
     sequelize,
     modelName: 'Annonce',
+    tableName: 'Annonces',
   });
   return Annonce;
 };

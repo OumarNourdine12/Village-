@@ -8,13 +8,16 @@ footer{
         -webkit-background-clip: padding-box; /* for Safari */
         background-clip: padding-box;
         height: 10vh;
-        margin-top: -1%;
+        margin-top: -2%;
         display: block !important;
         position: fixed;
         top: 85%;
         width: 100vw;
     }
-  /****************************GRID********************************/
+    @include media(desktop) {
+        margin-top: -1.2%;
+      }
+  /****GRID****/
   #section_grid {
     height: 16vh;
     background-color: black;
@@ -103,3 +106,4 @@ footer{
     
 }
 }
+

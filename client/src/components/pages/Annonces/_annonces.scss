@@ -1,0 +1,173 @@
+@import '../../../sass/config/mixins';
+
+.jumbo{
+    border: none;
+     background: #95ff9f;
+     padding: 5%;
+     padding-bottom: 20%;
+     @include media(desktop) {
+       width: 50vw;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+     }
+     h2{
+       font-size: 1.5rem;
+       color: white;
+       display:block;
+       margin-left: auto;
+       margin-right: auto;
+     }
+
+    .form-group{
+      .lab {
+        color: black;
+        font-size: 1.1rem;
+        font-style: oblique; 
+        margin-right: 5%;
+        margin-bottom: 0%;
+      }
+      .lab-2{
+        padding: 1%;
+        margin: 1% 5% 3% -2%;
+        width: 25%;
+        border-radius: 5%;
+        border-style: none;
+        @include media(desktop) {
+          width: 30%;
+       }
+      }
+      
+      .lab-3{
+        @include media(desktop) {
+          margin-left: 1%;
+       }
+      }
+      .lab-4{
+        @include media(desktop) {
+          margin-left: 13%;
+       }
+      }
+      .form-control{
+        margin-left: 0%;
+      
+      }
+      .select{
+        select{
+          margin: 5% 5% 5% 0;
+          width: 100px; 
+          height:30px; 
+          border-style: none;
+          background-color: white;
+        }
+      }
+      .info{
+        height: 100px;
+      }
+      input[type='radio']:after { 
+        width: 15px; 
+        height: 15px; 
+        border-radius: 15px; 
+        top: -2px; left: -1px; 
+        position: relative; 
+        background-color: #d1d3d1; 
+        content: ''; 
+        display: inline-block; 
+        visibility: visible; 
+        border: 2px solid white; 
+      } 
+      input[type='radio']:checked:after {
+         width: 15px; 
+         height: 15px; 
+         border-radius: 
+         15px; 
+         top: -2px; 
+         left: -1px; 
+         position: relative; 
+         background-color: #1e90ff; 
+         content: ''; 
+         display: inline-block;
+         visibility: visible; 
+         border: 2px solid white; 
+        } 
+      .point{
+       margin: 5% 0 5% 5%;
+       @include media(desktop) {
+         margin-top: -5%;
+        }
+      }
+    }
+     .button-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5%;
+     .button3 {
+        width: 50%;
+        height: 42px;
+        font-size: 18px;
+        background-color:  #b85b19;
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+        border-style: none;
+        margin-bottom: -2%;
+      }
+      .button3:hover {
+        background-color: #753a10;
+        cursor: pointer;
+      }
+      .button3:focus {
+        outline: none !important;
+      }
+    }
+    .button-center{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5%;
+  }
+  
+  .tableAnnoncesTous{
+    margin: 0 0 0 -5%;
+    width: 90vw;
+  }
+      .editer {
+        width: 20%;
+        height: 40px;
+        font-size: 14px;
+        background-color:  #1e90ff;
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+        border-style: none;
+        margin: 5% 50% 0% 5%;
+      }
+      .editer:hover {
+        background-color: #00509e;
+        cursor: pointer;
+      }
+      .editer:focus {
+        outline: none !important;
+      }
+
+      .effacer {
+        width: 20%;
+        height: 40px;
+        font-size: 14px;
+        background-color:  #ff1a1a;
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+        border-style: none;
+        margin-right: 5%;
+      }
+      .effacer:hover {
+        background-color: rgb(151, 25, 46);
+        cursor: pointer;
+      }
+      .effacer:focus {
+        outline: none !important;
+      }
+}

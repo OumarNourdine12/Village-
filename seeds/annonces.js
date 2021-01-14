@@ -17,7 +17,7 @@ module.exports = () => {
             nom_action: 'Parrainage',
             lieu: 'Paris',
             date_debut: "2020-01-13",
-            date_fin: "2020-05-é(",
+            date_fin: "2020-05-15",
             createdAt: new Date(),
             updatedAt: new Date(),
         },

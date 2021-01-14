@@ -9,6 +9,7 @@ class Profil extends Component {
     state = {
         loading: true,
         donUser: [],
+        donUser2: [],
         profilUser: []
     }
 
@@ -26,8 +27,8 @@ class Profil extends Component {
                 .then(response => response.json())
                 .then(data => {
                     console.log('auto', data)
-                    this.setState({ donUser: data.Dons, loading: false, profilUser: data });
-                    console.log('pepito', this.state.profilUser);
+                    this.setState({ donUser: data.Dons, donUser2: data.Annonces, loading: false, profilUser: data });
+                    //console.log('pepito', this.state.profilUser);
                     //console.log('pepi', this.state.donUser.Dons[0].titre);
                 });
         }
@@ -66,6 +67,19 @@ class Profil extends Component {
                             <h6>Date : {don.date_don}</h6>
                         </div>
                     ))}
+
+                </div>
+                <div className="jumbo-3">
+                    <h1 className="text-center">Votre Annonces</h1>
+                    {this.state.donUser2.map(don => (
+                        <div className="table-aniprofil">
+                            <h6>Nom : {don.nom_action}</h6>
+                            <h6>Montant: {don.lieu}</h6>
+                            <h6>Date : {don.date_debut}</h6>
+                            <h6>Date : {don.date_fin}</h6>
+                        </div>
+                    ))}
+
                 </div>
 
             </div>
