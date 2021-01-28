@@ -17,7 +17,7 @@ class Routes extends Component {
       <Router>
         <div className="App">
           <Route exact path="/" component={Accueil} />
-          <div className="container">
+          <div className="container" style={{paddingTop: '8vh', paddingBottom:'20vh'}}>
             <Route exact path="/inscription" component={Inscription} />
             <Route exact path="/connexion" component={Connexion} />
             <Route exact path="/admins" component={ConnexionAdmin} />

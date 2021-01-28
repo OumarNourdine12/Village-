@@ -1,3 +1,5 @@
+
+
 const models = require('../models');
 const jwttoken = require('../middlewares/jwt');
 const { UnauthorizedError } = require('../helpers/errors');
@@ -11,7 +13,7 @@ module.exports = {
         var headerAuth = req.headers['authorization']
         console.log('oumar', headerAuth);
         const decoded = jwttoken.getUserId(headerAuth);
-        console.log('miguelito', decoded);
+        console.log('lol', decoded);
         if (decoded < 0) {
             throw new UnauthorizedError(
                 'Non autorisé',

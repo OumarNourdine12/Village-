@@ -73,21 +73,21 @@ class Annonces extends Component {
         e.preventDefault();
     }
     componentDidMount() {
-        this.fechAnnonce(); // pour regarder les array du serveur 
+        // this.fechAnnonce(); // pour regarder les array du serveur 
         this.fechAnnonces();
 
     }
 
-    fechAnnonce() {
-        fetch(`/village/annonces/`)
-            .then(res => res.json())
-            .then(data => {
-                //console.log('pepito', data)
-                this.setState({ annonces: data }); //revisar aqui annonces
-                //console.log('pepito', this.state.annonces);
-            });
+    // fechAnnonce() {
+    //     fetch(`/village/annonces/`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             //console.log('pepito', data)
+    //             this.setState({ annonces: data }); //revisar aqui annonces
+    //             //console.log('pepito', this.state.annonces);
+    //         });
 
-    }
+    // }
 
     async fechAnnonces() {
         {
@@ -111,6 +111,7 @@ class Annonces extends Component {
 
     annonceDelete(id) {
         if (window.confirm("Vous-êtes sûr d'éliminer cet Annonces?")) {
+            debugger;
             const token = localStorage.getItem('token');
             fetch(`/village/annonce/${id}`, {
                 method: 'DELETE',
@@ -120,8 +121,15 @@ class Annonces extends Component {
                 }
             })
                 .then(res => res.json())
-                .then(data => console.log(data));
-            this.fechAnnonces();
+                .then(data => {
+                    console.log("DATAAAAAAAAAAAAAA => ")
+                    console.log(data)
+                    // this.fechAnnonces()
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+                ;
         }
     }
 
@@ -153,41 +161,45 @@ class Annonces extends Component {
 
     ) {
         return (
-            <form className="jumbo" onSubmit={this.creerAnnonce}>
-                <h2 className="text-center">Mes Annonces </h2>
-                <div>
-                    <div className="form-group">
+            <>  
+            <div className="jumbo">
+                <form onSubmit={this.creerAnnonce}>
+                    <h2 className="text-center">Mes Annonces </h2>
+                    <div>
+                        <div className="form-group">
 
-                        <div>
-                            <label className="lab" htmlFor="exampleInputEmail1">Annonce</label>
-                            <input type="text" className="form-control" name="nom_action"
-                                onChange={this.handleChange} value={this.state.nom_action} />
+                            <div>
+                                <label className="lab" htmlFor="exampleInputEmail1">Annonce</label>
+                                <input type="text" className="form-control" name="nom_action"
+                                    onChange={this.handleChange} value={this.state.nom_action} />
+                            </div>
+
+                            <div>
+                                <label className="lab" htmlFor="exampleInputEmail1">Lieu</label>
+                                <input type="text" className="form-control" name="lieu"
+                                    onChange={this.handleChange} value={this.state.lieu} />
+                            </div>
+
+
+                            <div>
+                                <label className="lab" htmlFor="exampleInputEmail1">Date debut</label>
+                                <input type="date" className="form-control" name="date_debut"
+                                    onChange={this.handleChange} value={this.state.date_debut} />
+                            </div>
+                            <div>
+                                <label className="lab" htmlFor="exampleInputEmail1">Date fin</label>
+                                <input type="date" className="form-control" name="date_fin"
+                                    onChange={this.handleChange} value={this.state.date_fin} />
+                            </div>
+
+
                         </div>
-
-                        <div>
-                            <label className="lab" htmlFor="exampleInputEmail1">Lieu</label>
-                            <input type="text" className="form-control" name="lieu"
-                                onChange={this.handleChange} value={this.state.lieu} />
+                        <div className="button-center">
+                            <button className="button3" type="submit"> Sauvegarder </button>
                         </div>
-
-
-                        <div>
-                            <label className="lab" htmlFor="exampleInputEmail1">Date debut</label>
-                            <input type="date" className="form-control" name="date_debut"
-                                onChange={this.handleChange} value={this.state.date_debut} />
-                        </div>
-                        <div>
-                            <label className="lab" htmlFor="exampleInputEmail1">Date fin</label>
-                            <input type="date" className="form-control" name="date_fin"
-                                onChange={this.handleChange} value={this.state.date_fin} />
-                        </div>
-
-
                     </div>
-                    <div className="button-center">
-                        <button className="button3" type="submit"> Sauvegarder </button>
-                    </div>
-                </div>
+                </form>
+
                 <div className="table">
                     {
                         this.state.profilAnnonces.map(item => {
@@ -208,12 +220,12 @@ class Annonces extends Component {
                         })
                     }
                 </div>
+                </div>
                 <div className="tableAnnoncesTous">
                     <AnnoncesTous />
                 </div>
 
-            </form>
-
+            </>
 
         )
     }

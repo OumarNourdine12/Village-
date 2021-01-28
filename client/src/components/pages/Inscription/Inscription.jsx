@@ -32,7 +32,7 @@ class Inscription extends Component {
         register(newUser)
             .then(res => {
                 this.props.history.push(`/connexion`)
-                if (window.confirm("Merci pour votre inscription chez SOSVET, maintenant vous pouvez vous connecter à notre site")) {
+                if (window.confirm("Merci pour votre inscription chez VIA, maintenant vous pouvez vous connecter à notre site")) {
                 }
             })
             .catch(err => {

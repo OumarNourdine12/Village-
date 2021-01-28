@@ -21,6 +21,8 @@ class Don extends Component {
     }
 
     creerDon(e) {
+        e.preventDefault();
+
         if (this.state.id) {
             const token = localStorage.getItem('token');
             fetch(`/village/don/${this.state.id}`, {
@@ -66,7 +68,6 @@ class Don extends Component {
                 })
                 .catch(err => console.error(err));
         }
-        e.preventDefault();
     }
     componentDidMount() {
         this.fechDon(); // pour regarder les array du serveur 
@@ -147,7 +148,10 @@ class Don extends Component {
     render(
 
     ) {
+    
         return (
+            
+            <>
             <form className="jumbo" onSubmit={this.creerDon}>
                 <h2 className="text-center">Ajoutez votre Don </h2>
                 <div>
@@ -174,12 +178,15 @@ class Don extends Component {
 
 
                     </div>
+                    
                     <div className="button-center">
                         <button className="button3" type="submit"> Sauvegarder </button>
                     </div>
 
 
                 </div>
+                </form>
+                <div className="jumbo">
                 <div className="table">
                     {
                         this.state.profilDon.map(item => {
@@ -200,7 +207,8 @@ class Don extends Component {
                         })
                     }
                 </div>
-            </form>
+                </div>
+            </>
         )
     }
 }

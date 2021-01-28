@@ -10,7 +10,12 @@ module.exports = {
 
     creerAnnonce: async (req, res, next) => {
         var headerAuth = req.headers['authorization']
-
+        console.log("-----------------------------------------------------------------------------------------------POST ANNONCE")
+        console.log("-----------------------------------------------------------------------------------------------POST ANNONCE")
+        console.log("-----------------------------------------------------------------------------------------------POST ANNONCE")
+        console.log("-----------------------------------------------------------------------------------------------POST ANNONCE")
+        console.log("-----------------------------------------------------------------------------------------------POST ANNONCE")
+        console.log("-----------------------------------------------------------------------------------------------POST ANNONCE")
         const decoded = jwttoken.getUserId(headerAuth);
 
         if (decoded < 0) {
@@ -93,26 +98,29 @@ module.exports = {
     deleteAnnonce: async (req, res, next) => {
         var headerAuth = req.headers['authorization']
         const decoded = jwttoken.getUserId(headerAuth);
-        //console.log(decoded);
+        console.log("------------------------------------------------------------------------------------------------------------------------JE DELETE ANNONCE");
         if (decoded < 0) {
             throw new UnauthorizedError(
                 'Non autorisé',
                 'Vous devez être connecté pour accéder à cette ressource.'
             );
         };
-        const user = await models.User.findByPk(decoded);
-        console.log('tutu', user.id)
-        await models.Annonce.destroy({
+        // const user = await models.User.findByPk(decoded);
+        // console.log('tutu', user.id)
+        let test = await models.Annonce.destroy({
             where: {
                 id: req.params.id
             }
         })
-            .then(() => {
-                res.json({ status: 'Annonce supprimé!' })
-            })
-            .catch(err => {
-                res.send('error: ' + err)
-            })
+        console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
+        console.log(test)
+        res.json({ status: 'Annonce supprimé!' })
+        // .then(() => {
+        //         res.json({ status: 'Annonce supprimé!' })
+        //     })
+        //     .catch(err => {
+        //         res.send('error: ' + err)
+        //     })
     },
 
     putAnnonce: async (req, res, next) => {

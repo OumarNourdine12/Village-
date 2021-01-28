@@ -20,63 +20,62 @@ class AnnoncesTous extends Component {
 
         };
         this.handleChange = this.handleChange.bind(this);
-        this.creerAnnonce = this.creerAnnonce.bind(this);
+        // this.creerAnnonce = this.creerAnnonce.bind(this);
     }
 
-    creerAnnonce(e) {
-        if (this.state.id) {
-            const token = localStorage.getItem('token');
-            fetch(`/village/annonce/${this.state.id}`, {
-                method: 'PUT',
-                body: JSON.stringify(this.state),
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    this.setState({
-                        nom_action: '',
-                        lieu: '',
-                        date_debut: '',
-                        date_fin: '',
-                        id: ''
-                    });
-                    this.fechAnnonces();
-                });
+    // creerAnnonce(e) {
+    //     if (this.state.id) {
+    //         const token = localStorage.getItem('token');
+    //         fetch(`/village/annonce/${this.state.id}`, {
+    //             method: 'PUT',
+    //             body: JSON.stringify(this.state),
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${token}`
+    //             }
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 console.log(data)
+    //                 this.setState({
+    //                     nom_action: '',
+    //                     lieu: '',
+    //                     date_debut: '',
+    //                     date_fin: '',
+    //                     id: ''
+    //                 });
+    //                 this.fechAnnonces();
+    //             });
 
-        } else {
-            const token = localStorage.getItem('token');
-            fetch('/village/annonce/', {
-                method: 'POST',
-                body: JSON.stringify(this.state),
-                headers: {
-                    'Content-Type': 'application/json', // objet avec le tipe de contenu format json
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    //M.toast({ html'Animal ajouté'})
-                    this.setState({
-                        nom_action: '',
-                        lieu: '',
-                        date_debu: '',
-                        date_fin: ''
-                    });
-                    this.fechAnnonces();  //pour montrer 
-                })
-                .catch(err => console.error(err));
-        }
-        e.preventDefault();
-    }
+    //     } else {
+    //         const token = localStorage.getItem('token');
+    //         fetch('/village/annonce/', {
+    //             method: 'POST',
+    //             body: JSON.stringify(this.state),
+    //             headers: {
+    //                 'Content-Type': 'application/json', // objet avec le tipe de contenu format json
+    //                 'Authorization': `Bearer ${token}`
+    //             }
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 console.log(data)
+    //                 //M.toast({ html'Animal ajouté'})
+    //                 this.setState({
+    //                     nom_action: '',
+    //                     lieu: '',
+    //                     date_debu: '',
+    //                     date_fin: ''
+    //                 });
+    //                 this.fechAnnonces();  //pour montrer 
+    //             })
+    //             .catch(err => console.error(err));
+    //     }
+    //     e.preventDefault();
+    // }
     componentDidMount() {
         this.fechAnnonce(); // pour regarder les array du serveur 
-        this.fechAnnonces();
-
+        // this.fechAnnonces();
     }
 
     fechAnnonce() {
@@ -91,41 +90,41 @@ class AnnoncesTous extends Component {
 
     }
 
-    async fechAnnonces() {
-        {
-            const token = localStorage.getItem('token');
-            //console.log('token', token)
-            await fetch(`/village/annonceUser/`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    //console.log('auto', data)
-                    this.setState({ profilAnnonces: data.Annonces, profilUser: data });
-                    //console.log('pepitona', this.state.profilUser);
-                });
-        }
-    }
+    // async fechAnnonces() {
+    //     {
+    //         const token = localStorage.getItem('token');
+    //         //console.log('token', token)
+    //         await fetch(`/village/annonceUser/`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${token}`
+    //             }
+    //         })
+    //             .then(response => response.json())
+    //             .then(data => {
+    //                 //console.log('auto', data)
+    //                 this.setState({ profilAnnonces: data.Annonces, profilUser: data });
+    //                 //console.log('pepitona', this.state.profilUser);
+    //             });
+    //     }
+    // }
 
-    annonceDelete(id) {
-        if (window.confirm("Vous-êtes sûr d'éliminer cet Annonces?")) {
-            const token = localStorage.getItem('token');
-            fetch(`/village/annonce/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-                .then(res => res.json())
-                .then(data => console.log(data));
-            this.fechAnnonces();
-        }
-    }
+    // annonceDelete(id) {
+    //     if (window.confirm("Vous-êtes sûr d'éliminer cet Annonces?")) {
+    //         const token = localStorage.getItem('token');
+    //         fetch(`/village/annonce/${id}`, {
+    //             method: 'DELETE',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${token}`
+    //             }
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => console.log(data));
+    //         this.fechAnnonces();
+    //     }
+    // }
 
     annoncePut(id) {
         fetch(`/village/annonce/${id}`)
